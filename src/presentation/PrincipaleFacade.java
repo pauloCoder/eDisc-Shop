@@ -1,4 +1,6 @@
 package presentation;
+
+import metier.Client;
 import metier.Produit;
 import services.Facade;
 import services.IFacade;
@@ -38,8 +40,16 @@ public class PrincipaleFacade
 		/** Affichage du panier **/
 		System.out.println("\n------------------------\n");
 		System.out.println(facade.getPanier());
+		System.out.println("\n------------------------\n");
 		
-		/** Création d'un client **/
+		/** Création d'un client et passage d'une commande **/
+		Client client = facade.creerClient("KOUASSI", "Yao Paul Williams", "135 rue Véron");
+		facade.passerCommande();
+		
+		/** Vérification : on imprime le client et la commande **/
+		System.out.println("Client : " + client);
+		System.out.println(facade.afficherCommande());
+
 
 		
 

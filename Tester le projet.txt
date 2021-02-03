@@ -1,0 +1,39 @@
+Dans cette dernière version, on va ajouter quelques tests unitaires pour vérifier
+que notre code fonctionne bien. Comme tests possible, mentionnons (mais vous pouvez 
+en ajouter d'autres !) : 
+
+ 1 - Le parcourt du catalogue
+ ============================
+ 	Le produit retourné pour une position donnée correspond-il au produit dans le
+ 	catalogue à cette position ?
+ 	Le nombre de produits retournés correspond il au nombre de produits du 
+ 	catalogue ?
+ 	Si on tente d'accéder au produit en position égale au nombre total de produits, 
+ 	reviens t'on au premier produit ?
+ 	
+ 2 - Panier
+ =========
+ 	Un produit ajouté au panier s'y trouve t'il effectivement ?
+    
+ 	L'ajout du même produit plusieurs fois au panier en augmente t'il la
+ 	quantité, si la quantité en est > 0 ? 
+ 	Et si la quantité vaut 0, la quantité dans le panier ne devrait pas changer.
+ 	
+ 	Noter que l'on n'a pas de moyen de retirer des articles du panier !
+ 	
+ 3 - Utilisateurs et commandes
+ =============================
+    Vérifier que lors de la création d'un client, il est bien retourné par la méthode de création.
+ 	Vérifier que lors de la création d'une commande, le nombre de lignes de détail est bien le même
+ 	que le nombre d'articles dans le panier.
+ 	Vérifier que lors de la création d'une commande, le total de la commande est bien le même que le total 
+ 	du panier. 
+ 	
+ Fabriquer pour chacune de ces trois groupes de test une classe de tests. Faire une suite de tests pour lancer
+ tous les tests en une seule fois.
+  
+Important : documentation JUnit 4 : https://junit.org/junit4/javadoc/latest/index.html
+	Probablement la page de documentation la plus utile : celle de la classe Assert : 
+		https://junit.org/junit4/javadoc/latest/org/junit/Assert.html
+	
+ 	

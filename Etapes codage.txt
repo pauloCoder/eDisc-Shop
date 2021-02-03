@@ -1,0 +1,60 @@
+Etapes codage
+=============
+
+On commence par créer un projet Java avec Eclipse, de nom Etape1 (ou quelque chose comme cela...) dans lequel on met un package
+pour chacune des futures couches de présentation, de services et métier.
+
+
+1 - Dans la première étape on traduit un diagramme de classes UML en code, en y créant les classes avec leurs attributs, et seulement cela.
+
+2 - Dans la seconde étape, on ajoute aux classes les attributs nécessaires pour implémenter les associations et aggrégations/compositions apparaissant dans le diagramme de classes. On doit identifier :
+
+	- Si les associations sont bidirectionnelles (un attribut nécessaire de chaque coté) ou non (un seul attribut nécessaire, du coté navigable).
+    - La multiplicité des associations : unique (une seule référence suffit) ou multiple (une collection ou un tableau est nÃ©cessaire).
+	- Dans le cas de l'utilisation d'une collection, laquelle faut il choisir : 
+		- une liste (accès séquentiel), comme ArrayList ou Vector (thread safe)
+		- une map (accès par clé), comme Hashmap ou ConcurrentHashMap (thread safe)
+		- un set (pas de doublons), comme HashSet.
+
+3 - Dans la troisième étape, on ajoute, en se faisant aider par Eclipse :
+	- Le(s) constructeur(s) en se demandant quels seront les paramètres à passer lors de la création des objets.
+	- Les accesseurs. Seront ils tous en lecture/écriture ?
+	- La méthode toString(). On pourra, dans certains cas, garder la version générée par Eclipse, et dans d'autres, il faudra la modifier, voir l'écrire complètement différemment.
+
+
+4 - Dans cette étape, les classes commencent à  être utilisables mais il manque des traitements métier importants pour (par exemple) :
+    - ajouter les articles dans le panier
+    - créer une commande depuis le panier
+    Etc.
+   On fera l'inventaire de ces traitements et on déterminera dans quelle classe il faut les placer.
+   - Catalogue : 
+        1) initialisation du catalogue avec des produits.
+        2) Ajouter des produits au catalogue
+        3) Combien de produits dans le catalogue
+    - Panier
+        1) Ajout d'une option au panier (à partir d'un produit et d'une
+           quantité). Ne pas ajouter plusieurs fois le même produit.
+    - Commande
+        Tout ce qui est nécessaire à passer d'un panier à une commande.
+        Créer un client + créer la commande + transformer chaque détail
+        panier en une ligne de commande.
+
+   On ajoutera aussi les contraintes techniques utiles (comme l'organisation de classe nÃ©cessaire pour que le catalogue soit un singleton).
+
+5 - Les classes sont désormais 'viables' et on doit pouvoir commencer à s'en servir.
+    Pour cela, on simule une utilisation basique par une couche de présentation en mode console.
+    On ajoute donc un main() qui tente de parcourir le catalogue, en passant d'un produit à l'autre et qui imprime chacun des produits.
+    On tente également de mettre des produits dans le panier, puis on affiche le panier afin de vérifier qu'ils s'y trouvent.
+    Enfin on crée un client fictif ainsi qu'une commande à partir du panier.
+
+6 - Dans la version précédente, la couche de présentation (le main(), pour nous) devait travailler directement avec les classes métier, les instancier 
+    et les connecter, pour obtnir les résultats recherchés.
+    On va dans cette version fabriquer une mini couche de services, qui va reprendre ce travail à sa charge, et donc simplifier la couche de 
+    présentation. Elle sera très simple  et comportera une classe unique servant de 'facade' aux diverses classes métier, pour dégager la 
+    présentation de leur utilisation directe et d'en être isolée.
+ 
+   Cette version va former le point de départ de la version Web, remplaçant la couche de présentation console par une application Web.
+   
+
+
+

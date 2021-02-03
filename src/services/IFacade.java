@@ -25,14 +25,14 @@ public interface IFacade
 	/**
 	 * Méthode permettant de récuperer le nombre de 
 	 * produits contenus dans le catalogue 
-	 * @return int
+	 * @return nombre de produits
 	 */
 	int getNbProduits();
 	
 	/*--- Méthode concernant le panier ---*/
 	/**
 	 * Accesseur du panier
-	 * @return void
+	 * @return le panier
 	 */
 	Panier getPanier();
 	
@@ -40,7 +40,7 @@ public interface IFacade
 	 * Mutateur du panier
 	 * @param panier : panier remplaçant
 	 * @return 
-	 * @return Panier
+	 * @return void
 	 */
 	void setPanier(Panier panier);
 	
@@ -69,8 +69,9 @@ public interface IFacade
 	/**
 	 * Méthode permettant de passer la commande des articles
 	 * sélectionnés par le client
+	 * @throws Exception 
 	 */
-	void passerCommande();
+	void passerCommande() throws Exception;
 	
 	/**
 	 * Méthode permettant d'afficher les différents articles concernés

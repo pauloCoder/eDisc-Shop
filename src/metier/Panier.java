@@ -148,6 +148,7 @@ public class Panier
 		else
 		{
 			StringBuilder message = new StringBuilder("Contenu du panier : \n");
+			message.append("------------------\n");
 			for(DetailPanier dp : articles)
 			{
 				message.append(dp + "\n");

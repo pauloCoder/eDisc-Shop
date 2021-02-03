@@ -91,7 +91,7 @@ public class Client
 	@Override
 	public String toString() 
 	{
-		return " [ Nom - Prénom client : " + this.nom.toUpperCase() + " " 
+		return " [ Nom - Prénom(s) : " + this.nom.toUpperCase() + " " 
 				+ this.prenom + " / Adresse client : " + this.adresse + "]";
 	}
 
