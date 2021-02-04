@@ -1,0 +1,37 @@
+Test unitaire :
+==============
+
+1 - TestCatalogue :
+------------------ 
+
+	- Le produit retourné pour une position donnée correspond-il au produit dans le
+ 	  catalogue à cette position ? 
+	- Le nombre de produits retournés correspond il au nombre de produits du 
+ 	  catalogue ?
+	- Si on tente d'accéder au produit en position égale au nombre total de produits, 
+ 	  reviens t'on au premier produit ?
+
+2 - TestPanier :
+---------------
+	
+	- Un produit ajouté au panier s'y trouve t'il effectivement ?
+	- Le stock est-il mis à jour quand un produit est ajouté au panier ?
+	- Une exception est elle levée lorsque le produit ajouté n'est plus 
+	  disponible ? (Stock insuffisant)
+ 	- L'ajout du même produit plusieurs fois au panier en augmente t'il la
+ 	  quantité, si la quantité est > 0 ? 
+ 	- Et si la quantité vaut 0, la quantité dans le panier ne devrait pas changer.
+	* Intégrer une méthode de retrait de produit et la tester !!! 
+
+3 - TestClient :
+---------------
+
+	- Un client créé est il correctement retourné après sa création ? 
+
+4 - TestCommande :
+----------------
+
+	- Lors de la création d'une commande, le nombre de lignes de détail est
+	  il le même que le nombre d'articles dans le panier ?
+	- Lors de la création d'une commande, le total de la commande est il le même 
+	  que le total du panier. 

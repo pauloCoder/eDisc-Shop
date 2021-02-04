@@ -77,7 +77,8 @@ public interface IFacade
 	 * Méthode permettant d'afficher les différents articles concernés
 	 * par la commande du client
 	 * @return
+	 * @throws Exception 
 	 */
-	String afficherCommande();
+	String afficherCommande() throws Exception;
 
 }

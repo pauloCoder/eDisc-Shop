@@ -50,9 +50,6 @@ public class PrincipaleFacade
 		System.out.println("Client : " + client);
 		System.out.println(facade.afficherCommande());
 
-
-		
-
 	}
 
 }

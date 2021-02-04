@@ -1,0 +1,3 @@
+* Création des énumérations
+* Création des classes d'exception héritant de Exception
+		

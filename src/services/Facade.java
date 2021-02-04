@@ -136,7 +136,6 @@ public class Facade implements IFacade
 				 * Initialisation de la commande et ajout de tous les détails commandes
 				 * à la commande
 				 */
-				
 				this.commande = new Commande(this.client,new Date(),this.panier.getMontantTotal());
 				for (DetailPanier dp : this.panier.getArticles())
 				{
@@ -145,18 +144,22 @@ public class Facade implements IFacade
 			}
 			else
 			{
-				System.out.println("Le panier est vide !");
+				throw new Exception("Impossible de passer une commande. Le panier est vide !");
 			}
 		}
 		else
 		{
-			System.out.println("Seuls les clients peuvent passer des commandes !");
+			throw new Exception("Seuls les clients peuvent passer des commandes !");
 		}
 	}
 
 	@Override
-	public String afficherCommande() 
+	public String afficherCommande() throws Exception 
 	{
+		if (this.commande == null)
+		{
+			throw new Exception("Votre commande ne contient aucun article");
+		}
 		return this.commande.toString();
 	}
 
