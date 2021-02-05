@@ -46,8 +46,9 @@ import services.Facade;
  * @author Paul KOUASSI
  *
  */
-class TestCatalogue {
-	
+class TestCatalogue 
+{
+
 	/*--- Attributs ---*/
 	private static Catalogue leCatalogue = null;
 	private Facade facade = null;
@@ -83,6 +84,7 @@ class TestCatalogue {
 	}
 
 	/**
+	 * Configuration avant chaque test
 	 * @throws java.lang.Exception
 	 */
 	@BeforeEach
@@ -117,7 +119,8 @@ class TestCatalogue {
 	{
 		//Produit retourné par la façade
 		Produit produit = leCatalogue.getProduits().get(posAleatoire);
-		assertEquals(produit.getCode(),leCatalogue.getProduits().get(posAleatoire).getCode(),"Les produits ne correspondent pas");
+		assertEquals(produit.getCode(),leCatalogue.getProduits().get(posAleatoire).getCode(),
+					 "Les produits ne correspondent pas");
 	}
 
 	/**
