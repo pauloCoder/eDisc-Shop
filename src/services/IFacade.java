@@ -1,6 +1,7 @@
 package services;
 
 import metier.Client;
+import metier.Commande;
 import metier.Panier;
 import metier.Produit;
 
@@ -71,7 +72,7 @@ public interface IFacade
 	 * sélectionnés par le client
 	 * @throws Exception 
 	 */
-	void passerCommande() throws Exception;
+	Commande passerCommande() throws Exception;
 	
 	/**
 	 * Méthode permettant d'afficher les différents articles concernés

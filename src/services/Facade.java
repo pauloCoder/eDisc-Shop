@@ -126,9 +126,9 @@ public class Facade implements IFacade
 	}
 
 	@Override
-	public void passerCommande() throws Exception 
+	public Commande passerCommande() throws Exception 
 	{
-		if (this.client != null)
+		if (this.commande == null && this.client != null)
 		{
 			if (this.panier.getArticles().size() != 0)
 			{
@@ -151,6 +151,8 @@ public class Facade implements IFacade
 		{
 			throw new Exception("Seuls les clients peuvent passer des commandes !");
 		}
+		
+		return this.commande;
 	}
 
 	@Override

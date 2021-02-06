@@ -46,7 +46,7 @@ import services.Facade;
  * @author Paul KOUASSI
  *
  */
-class TestCatalogue 
+public class TestCatalogue 
 {
 
 	/*--- Attributs ---*/
@@ -62,7 +62,7 @@ class TestCatalogue
 	 * @throws java.lang.Exception
 	 */
 	@BeforeAll
-	static void setUpBeforeClass() throws Exception 
+	public static void setUpBeforeClass() throws Exception 
 	{
 		System.out.println("Initialisation avant les tests...");
 		System.out.println("Chargement du catalogue...");
@@ -76,7 +76,7 @@ class TestCatalogue
 	 * @throws java.lang.Exception
 	 */
 	@AfterAll
-	static void tearDownAfterClass() throws Exception 
+	public static void tearDownAfterClass() throws Exception 
 	{
 		leCatalogue = null;
 		System.out.println("Libération de la mémoire...");
@@ -88,7 +88,7 @@ class TestCatalogue
 	 * @throws java.lang.Exception
 	 */
 	@BeforeEach
-	void setUp() throws Exception 
+	public void setUp() throws Exception 
 	{
 		facade = new Facade();
 		//Position aléatoire d'un produit
@@ -102,7 +102,7 @@ class TestCatalogue
 	 * @throws java.lang.Exception
 	 */
 	@AfterEach
-	void tearDown() throws Exception 
+	public void tearDown() throws Exception 
 	{
 		facade = null;
 		posAleatoire = null;
@@ -115,7 +115,7 @@ class TestCatalogue
 	 * Test method for {@link services.Facade#getProduit(int)}.
 	 */
 	@Test
-	void testGetProduit() 
+	public void testGetProduit() 
 	{
 		//Produit retourné par la façade
 		Produit produit = leCatalogue.getProduits().get(posAleatoire);
@@ -128,7 +128,7 @@ class TestCatalogue
 	 * Test method for {@link services.Facade#getNbProduits()}.
 	 */
 	@Test
-	void testGetNbProduits() 
+	public void testGetNbProduits() 
 	{
 		//Nombre de produits contenus dans la façade
 		int nbProduitsFacade = facade.getNbProduits();
@@ -139,7 +139,7 @@ class TestCatalogue
 	 * TestCatalogue : Test n°3
 	 */
 	@Test
-	void testGetPositionInitiale()
+	public void testGetPositionInitiale()
 	{
 		//Produit en position égale au nombre de produits
 		produit = facade.getProduit(nbProduitsCatalogue);
