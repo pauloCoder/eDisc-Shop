@@ -23,8 +23,25 @@ passer au développement web ("Dynamic Web project")
 	  sa description. Une classe commande permettant de passer une commande définie par
 	  son numéro de commande, la date de commande et les détails de la commande qui
 	  sont les différentes données sur les produits de la commande...)
-	  Plus d'infos : voir diagramme UML (UML.PNG) pour les différentes classes existantes 
-	  ainsi que les connexions existantes entre celles-ci.
-	 
-	 - Développement des  
+
+	- Simulation en console d'une commande effectuée par un client qui va parcourir le catalogue
+	  et ajouter des produits à son panier. L'achat n'étant pas encore effectué, le produit est 
+	  'virtuellement retiré du stock' pour s'assurer que le client n'ait pas plus de produits
+	  qu'il n'en existe dans son panier. Les stocks sont effectivement mis à jour une fois
+	  la commande passée par le client.
 	
+	- Conception d'une facade fournissant une interface simplifiée du fonctionnement des composants
+	  métiers. Cette interface (IFacade) regroupe l'ensemble des fonctionnalités necessaires à
+	  faire fonctionner l'application et permet d'éviter de connaître en profondeur la façon dont
+	  les composants métiers sont liés entre eux.
+	
+	- Réalisation de quelques tests unitaires (Consulter le fichier "Docs tests unitaires JUnit.txt")  
+	  
+	  Plus d'infos : voir diagramme UML (UML.PNG) pour les différentes classes existantes 
+	  ainsi que les connexions existantes entre celles-ci et le fichier "Etapes codage.txt"
+	  pour une explication plus détaillée du développement de l'application en console
+
+	=> Fin de l'implémentation en mode console. Pour la suite du projet, on se réferera au fichier
+	   eCommerceWebsite
+
+
